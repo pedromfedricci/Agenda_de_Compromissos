@@ -183,7 +183,7 @@ T & MyVector<T>::contentAt(long value) const
  * na qual o conteúdo se encontra. Se o conteúdo de busca não for
  * encontrado no vetor, um valor negativo (que em módulo representa
  * a posição a qual o conteúdo seria inserido seguindo a lógica
- * de ordenação) será retornado.
+ * de ordenação) será retornado. Método utiliza busca binária
  * @tparam T template de objeto genérico 'T'
  * @param searchValue conteúdo a ser procurado
  * @return índice do conteúdo procurado
@@ -263,7 +263,7 @@ void MyVector<T>::reallocate(long allocationLength)
  * um booleano que indica o sucesso na operação.
  * Se não houver mais espaço para a nova inserção,
  * o vetor será realocado dinâmicamente para um novo
- * e maior espaço
+ * e maior espaço. Inserção utiliza busca binária
  * @tparam T template de objeto genérico 'T'
  * @param newContent novo conteúdo a ser inserido
  * @return booleano que indica o sucesso da inserção
@@ -299,7 +299,8 @@ bool MyVector<T>::insertInOrder(T &newContent)
  * parâmetro, se o conteúdo existir no vetor,
  * ele será retirado e o método vai retornar um
  * booleano True, caso contrário, nenhum valor será
- * retirado e será retornado False
+ * retirado e será retornado False. Remoção utiliza
+ * busca binária
  * @tparam T template de objeto genérico 'T'
  * @param searchContent conteúdo a ser removido
  * @return booleano que indica o sucesso na operação
