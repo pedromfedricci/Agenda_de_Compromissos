@@ -16,7 +16,8 @@ using namespace std;
  * remoções também são processadas por busca binária.
  * A lógica de comparação é determinada por operadores
  * lógicos (== != > >= < <=), dessa forma, objetos devem
- * sobrecarregar esses operadores para serem inseridos.
+ * sobrecarregar esses operadores para serem inseridos,
+ * buscados e removidos.
  * @tparam T template de objeto genérico 'T'
  */
 template<class T> class MyVector {
