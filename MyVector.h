@@ -263,7 +263,9 @@ void MyVector<T>::reallocate(long allocationLength)
  * um booleano que indica o sucesso na operação.
  * Se não houver mais espaço para a nova inserção,
  * o vetor será realocado dinâmicamente para um novo
- * e maior espaço. Inserção utiliza busca binária
+ * e maior espaço. Inserção utiliza busca binária.
+ * O novos conteúdos inseridos são posicionados de
+ * forma ordenada e crescente no vetor.
  * @tparam T template de objeto genérico 'T'
  * @param newContent novo conteúdo a ser inserido
  * @return booleano que indica o sucesso da inserção
