@@ -38,6 +38,7 @@ public:
     void printList(const string&, const string&);
     Node<T>* linearSearch(T &);
     bool removeOne(T &);
+    bool iterate(T &, long);
 
     DoublyLinkedList<T>&operator=(const DoublyLinkedList<T>&);
     friend ostream& operator<< <T>(ostream &os, const DoublyLinkedList<T> &list);
@@ -218,13 +219,19 @@ bool DoublyLinkedList<T>::removeOne(T &matchContent)
 template<class T>
 DoublyLinkedList<T>& DoublyLinkedList<T>::operator=(const DoublyLinkedList<T> &list)
 {
-    Node<T> *current = list.header;
-
-    while(current)
+    if (!list.header)
     {
-        DoublyLinkedList::insertInOrder(current->getContent());
-
-        current = current->getNext();
+        DoublyLinkedList::header = nullptr;
+        DoublyLinkedList::tail = nullptr;
+    }
+    else
+    {
+        Node<T> *current = list.header;
+        while (current)
+        {
+            DoublyLinkedList::insertInOrder(current->getContent());
+            current = current->getNext();
+        }
     }
 }
 
@@ -248,6 +255,29 @@ ostream& operator<<(ostream &os, const DoublyLinkedList<T> &list)
     }
 
     return os;
+}
+
+/**
+ *
+ * @tparam T
+ * @param outContent
+ * @param index
+ * @return
+ */
+template<class T>
+bool DoublyLinkedList<T>::iterate(T & outContent, long qnt)
+{
+    if (qnt <= 0 || qnt > getSize() || !header)
+        return false;
+
+    Node<T> *current = header;
+
+    while(--qnt)
+        current = current->getNext();
+
+    outContent = current->getContent();
+
+    return true;
 }
 
 #endif //DOUBLYLINKEDLIST_H

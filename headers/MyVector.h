@@ -281,7 +281,7 @@ bool MyVector<T>::insertInOrder(T &newContent)
 
     if (pos >= 0)
     {
-        cout << "Conteudo ja inserido!: "
+        cout << "Conteudo ja inserido!:\n"
              << newContent << endl;
         return false;
     }
