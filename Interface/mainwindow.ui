@@ -44,7 +44,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="6" column="0">
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="btnSair">
          <property name="maximumSize">
           <size>
            <width>100</width>
@@ -57,7 +57,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="btnLogar">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -80,7 +80,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QLineEdit" name="lSenha">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -109,7 +109,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="lName">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -141,7 +141,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="lLogin">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -157,7 +157,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QPushButton" name="pushButton_7">
+        <widget class="QPushButton" name="btnCadastrar">
          <property name="maximumSize">
           <size>
            <width>100</width>
@@ -206,7 +206,7 @@ QLineEdit,  QTextEdit, QPushButton:!pressed{
      </spacer>
     </item>
     <item row="5" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btnAtualizar">
       <property name="text">
        <string>Atualizar</string>
       </property>
