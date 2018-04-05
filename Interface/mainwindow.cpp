@@ -1,13 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <fstream>
+#include <QWidget>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(updateUsers(bool)));
+    connect(ui->btnAtualizar, SIGNAL(clicked(bool)), this, SLOT(updateUsers(bool)));
 }
 
 MainWindow::~MainWindow()
@@ -26,26 +27,28 @@ void MainWindow::updateUsers(bool)
     while(fin.get(temp))
         buffer.push_back(QChar(temp));
 
-    ui->textEdit->setText(buffer);
+    //ui->textEdit->setText(buffer);
 }
 
-void MainWindow::on_pushButton_7_clicked()
+void MainWindow::on_btnCadastrar_clicked()
 {
-    if(ui->lineEdit->text().isEmpty() || ui->lineEdit_2->text().isEmpty())
+    if(ui->lName->text().isEmpty() || ui->lLogin->text().isEmpty())
         return;
     using namespace std;
     ofstream fout("C:\\Users\\Pedro\\Desktop\\usuarios.txt", ios::app);
 
-    fout <<ui->lineEdit->text().toStdString() <<endl;
-    fout <<ui->lineEdit_2->text().toStdString() <<endl;
-    fout <<ui->lineEdit_3->text().toStdString() <<endl;
+    fout <<ui->lName->text().toStdString() <<endl;
+    fout <<ui->lLogin->text().toStdString() <<endl;
+    fout <<ui->lSenha->text().toStdString() <<endl;
 
     fout <<" ---- " <<endl;
 
-    updateUsers(true);
+
+   updateUsers(true);
+   ui->textEdit->setText("Usuário Cadastrado");
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_btnSair_clicked()
 {
     qApp->quit();
 }
