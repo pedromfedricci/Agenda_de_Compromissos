@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
 #include <QInputDialog>
 
 namespace Ui {
@@ -20,9 +21,10 @@ private slots:
 
     void updateUsers(bool);
 
-    void on_pushButton_7_clicked();
+    void on_btnCadastrar_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_btnSair_clicked();
+
 
 
 
