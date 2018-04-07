@@ -38,6 +38,7 @@ private:
 
     void carregarDaPosicao(long pos);
     long andarParaFrente(bool b = true);
+    void resetLines();
 };
 
 #endif 
