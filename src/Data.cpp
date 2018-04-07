@@ -1,4 +1,4 @@
-#include "../headers/Data.h"
+#include "headers/Data.h"
 
 const int Data::diasPorMes[13]= {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
@@ -264,6 +264,8 @@ Data& Data::operator=(const Data &data)
     this->ano = data.ano;
     this->mes = data.mes;
     this->dia = data.dia;
+
+    return *this;
 }
 
 /**
