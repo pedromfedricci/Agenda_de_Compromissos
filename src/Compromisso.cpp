@@ -1,11 +1,8 @@
+//
+// Created by pedro on 20/03/18.
+//
 
-
-#include "Compromisso.h"
-
-/**
- *
- */
-Compromisso::Compromisso() = default;
+#include "headers/Compromisso.h"
 
 /**
  *
@@ -14,19 +11,6 @@ Compromisso::Compromisso() = default;
  * @param titulo
  */
 Compromisso::Compromisso(Data &data, Horario &horario, const string & titulo)
-{
-    this->data = data;
-    this->horario = horario;
-    this->titulo = titulo;
-}
-
-/**
- *
- * @param data
- * @param horario
- * @param titulo
- */
-Compromisso::Compromisso(Data data, Horario horario, const string &titulo)
 {
     this->data = data;
     this->horario = horario;
@@ -45,7 +29,7 @@ string Compromisso::getDescricao() const {
  *
  * @param descricao
  */
-void Compromisso::setDescricao(string & descricao) {
+void Compromisso::setDescricao(const string & descricao) {
     this->descricao = descricao;
 }
 
@@ -61,7 +45,7 @@ string Compromisso::getTitulo() const {
  *
  * @param titulo
  */
-void Compromisso::setTitulo(string & titulo) {
+void Compromisso::setTitulo(const string & titulo) {
     this->titulo = titulo;
 }
 
@@ -77,7 +61,7 @@ string Compromisso::getLocal() const {
  *
  * @param local
  */
-void Compromisso::setLocal(string & local) {
+void Compromisso::setLocal(const string & local) {
     this->local = local;
 }
 
@@ -159,6 +143,8 @@ Compromisso& Compromisso::operator=(const Compromisso & compromisso)
     Compromisso::data = compromisso.data;
     Compromisso::local = compromisso.local;
     Compromisso::descricao = compromisso.descricao;
+
+    return *this;
 }
 
 /**
@@ -207,4 +193,33 @@ void Compromisso::setLocal(const char *local)
 {
     string temp(local);
     setLocal(temp);
+}
+
+/**
+ *
+ * @return
+ */
+Json::Value Compromisso::toJson()
+{
+    Json::Value obj;
+    obj["titulo"] = getTitulo();
+    obj["local"] = getLocal();
+    obj["data"] = Compromisso::data.toJson();
+    obj["horario"] = Compromisso::horario.toJson();
+    obj["descricao"] = getDescricao();
+
+    return obj;
+}
+
+/**
+ *
+ * @param obj
+ */
+void Compromisso::fromJson(Json::Value obj)
+{
+    setTitulo(obj["titulo"].asString());
+    setDescricao(obj["descricao"].asString());
+    setLocal(obj["local"].asString());
+    Compromisso::data.fromJson(obj["data"]);
+    Compromisso::horario.fromJson(obj["horario"]);
 }
