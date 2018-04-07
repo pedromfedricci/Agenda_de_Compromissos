@@ -1,4 +1,6 @@
-#include "../headers/Horario.h"
+
+
+#include "headers/Horario.h"
 
 /**
  *
@@ -246,6 +248,8 @@ Horario& Horario::operator=(const Horario &horario)
     this->hora = horario.hora;
     this->minuto = horario.minuto;
     this->segundo = horario.segundo;
+
+    return *this;
 }
 
 /**
