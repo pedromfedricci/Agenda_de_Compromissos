@@ -2,13 +2,14 @@
 #include "ui_mainwindow.h"
 #include <fstream>
 #include <QWidget>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->btnAtualizar, SIGNAL(clicked(bool)), this, SLOT(updateUsers(bool)));
+    //connect(ui->btnAtualizar, SIGNAL(clicked(bool)), this, SLOT(updateUsers(bool)));
 }
 
 MainWindow::~MainWindow()
@@ -45,7 +46,7 @@ void MainWindow::on_btnCadastrar_clicked()
 
 
    updateUsers(true);
-   ui->textEdit->setText("Usuário Cadastrado");
+   ui->show->setText("Usuário Cadastrado");
 }
 
 void MainWindow::on_btnSair_clicked()
@@ -54,3 +55,45 @@ void MainWindow::on_btnSair_clicked()
 }
 
 
+
+void MainWindow::on_btnLogar_clicked()
+{
+    bool entrou = false;
+    MyVector<Usuario> u = Cadastrados;
+    string usuario = (ui->lLogin->text()).toStdString();
+    string senha = (ui->lSenha->text()).toStdString();
+    for(int i =0;i<=u.getSize();i++)
+        if(u[i]->getUsername() == usuario){
+            if(u[i]->getPassword() == senha){
+                ind = i;
+                entrou = true;
+            }
+        }
+    if(ind == -1)
+    {
+        QMessageBox message;
+        message.setText("Dados incorretos");
+        message.exec();
+    }
+    updateUsers(entrou);
+}
+
+void MainWindow::on_btnCadastrarCompromisso_clicked()
+{
+
+}
+
+void MainWindow::on_btnRemoverCompromisso_clicked()
+{
+
+}
+
+void MainWindow::on_btnAnt_clicked()
+{
+
+}
+
+void MainWindow::on_btnProx_clicked()
+{
+
+}
