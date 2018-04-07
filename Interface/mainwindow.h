@@ -5,13 +5,15 @@
 #include <QWidget>
 #include <QInputDialog>
 
-
+#include <iostream>
+#include <cstdlib>
 #include "MyVector.h"
 #include "DoublyLinkedList.h"
 #include "Horario.h"
 #include "Usuario.h"
 #include "Data.h"
 
+using namespace std;
 namespace Ui {
 class MainWindow;
 }
@@ -44,6 +46,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    int ind;
     MyVector<Usuario>Cadastrados;
 };
 
