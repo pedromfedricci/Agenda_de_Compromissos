@@ -2,7 +2,7 @@
 #define DATA_H
 
 #include <iostream>
-#include "../json/json.h"
+#include "json.h"
 using namespace std;
 
 class Data {
