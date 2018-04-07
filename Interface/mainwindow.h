@@ -5,6 +5,13 @@
 #include <QWidget>
 #include <QInputDialog>
 
+
+#include "MyVector.h"
+#include "DoublyLinkedList.h"
+#include "Horario.h"
+#include "Usuario.h"
+#include "Data.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -25,11 +32,19 @@ private slots:
 
     void on_btnSair_clicked();
 
+    void on_btnLogar_clicked();
 
+    void on_btnCadastrarCompromisso_clicked();
 
+    void on_btnRemoverCompromisso_clicked();
+
+    void on_btnAnt_clicked();
+
+    void on_btnProx_clicked();
 
 private:
     Ui::MainWindow *ui;
+    MyVector<Usuario>Cadastrados;
 };
 
 #endif // MAINWINDOW_H
