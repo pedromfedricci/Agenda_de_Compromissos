@@ -54,7 +54,8 @@ bool Arquivo::readFileTo(MyVector<Usuario> &vector)
 
     if (file.fail())
     {
-        cout << "Deu ruim"<< endl;
+        cout << "Novo arquivo"<< endl;
+        file.open(path,istream::in);
         return false;
     }
 
