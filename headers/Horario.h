@@ -1,8 +1,12 @@
+//
+// Created by pedro on 19/03/18.
+//
+
 #ifndef HORARIO_H
 #define HORARIO_H
 
 #include <iostream>
-#include "../json/json.h"
+#include "json.h"
 using namespace std;
 
 class Horario {
