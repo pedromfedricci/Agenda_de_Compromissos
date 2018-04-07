@@ -233,6 +233,7 @@ DoublyLinkedList<T>& DoublyLinkedList<T>::operator=(const DoublyLinkedList<T> &l
             current = current->getNext();
         }
     }
+    return *this;
 }
 
 /**

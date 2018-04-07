@@ -274,9 +274,6 @@ void MyVector<T>::reallocate(long allocationLength)
 template<class T>
 bool MyVector<T>::insertInOrder(T &newContent)
 {
-    if (hasReachedLimit())
-        reallocate(2 * getAllocated());
-
     long pos = searchIndex(newContent);
 
     if (pos >= 0)
@@ -285,6 +282,9 @@ bool MyVector<T>::insertInOrder(T &newContent)
              << newContent << endl;
         return false;
     }
+
+    if (hasReachedLimit())
+        reallocate(2 * getAllocated());
 
     pos = abs(pos);
 
